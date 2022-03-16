@@ -7,8 +7,8 @@ const parameters = ref({
   x: 625,
   count: 2020,
   firstCondition: 1,
-  firstAction: 0.2,
-  firstOperator: 'multiplication',
+  firstAction: 5,
+  firstOperator: 'division',
   secondCondition: 1,
   secondAction: 4,
   secondOperator: 'addition'
@@ -18,8 +18,8 @@ const reset = () => {
     x: 625,
     count: 2020,
     firstCondition: 1,
-    firstAction: 0.2,
-    firstOperator: 'multiplication',
+    firstAction: 5,
+    firstOperator: 'division',
     secondCondition: 1,
     secondAction: 4,
     secondOperator: 'addition'
