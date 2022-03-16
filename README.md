@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# Compute Program
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这是一个计算程序，灵感来自《南方新中考·数学》中的一道题。我使用前端技术实现了它
 
-## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 实现该程序的算法
+
+```js
+function computeProgram(x, count) {
+  for (let i = 1; i <= count; i++) {
+    if (x != 1) {
+      x /= 5
+    } else if (x == 1) {
+      x += 4
+    }
+  }
+}
+```
