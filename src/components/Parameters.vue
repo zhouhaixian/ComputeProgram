@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, unref } from 'vue';
+import { onMounted, ref, unref } from 'vue'
 
 const emit = defineEmits(['compute'])
 

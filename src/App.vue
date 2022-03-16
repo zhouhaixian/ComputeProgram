@@ -2,6 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from 'vue'
+import * as math from 'mathjs'
 import Parameters from './components/Parameters.vue'
 import Result from './components/Result.vue'
 
@@ -15,45 +16,45 @@ const compute = (parameters) => {
         case "addition":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x += firstAction
+              x = math.add(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x += secondAction
+              x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x += firstAction
+              x = math.add(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x -= secondAction
+              x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x += firstAction
+              x = math.add(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x *= secondAction
+              x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x += firstAction
+              x = math.add(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x /= secondAction
+              x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -63,45 +64,45 @@ const compute = (parameters) => {
         case "addition":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x -= firstAction
+              x = math.subtract(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x += secondAction
+              x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x -= firstAction
+              x = math.subtract(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x -= secondAction
+              x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x -= firstAction
+              x = math.subtract(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x *= secondAction
+              x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x -= firstAction
+              x = math.subtract(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x /= secondAction
+              x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -111,45 +112,45 @@ const compute = (parameters) => {
         case "addition":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x *= firstAction
+              x = math.multiply(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x += secondAction
+              x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x *= firstAction
+              x = math.multiply(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x -= secondAction
+              x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x *= firstAction
+              x = math.multiply(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x *= secondAction
+              x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x *= firstAction
+              x = math.multiply(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x /= secondAction
+              x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -159,45 +160,45 @@ const compute = (parameters) => {
         case "addition":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x /= firstAction
+              x = math.divide(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x += secondAction
+              x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x /= firstAction
+              x = math.divide(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x -= secondAction
+              x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x /= firstAction
+              x = math.divide(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x *= secondAction
+              x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
           for (let i = 1; i <= count; i++) {
             if (x != firstCondition) {
-              x /= firstAction
+              x = math.divide(math.bignumber(x), math.bignumber(firstAction))
             } else if (x == secondCondition) {
-              x /= secondAction
+              x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${x}`)
-            console.log(`第${i}次: x = ${x}`)
+            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
