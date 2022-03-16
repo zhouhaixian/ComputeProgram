@@ -11,7 +11,7 @@ const compute = (parameters) => {
   computing.value = !computing.value
   result.value = []
   let { x, count, firstCondition, firstAction, secondCondition, secondAction } = parameters
-  for (let i = 0; i <= count; i++) {
+  for (let i = 1; i <= count; i++) {
     if (x != firstCondition) {
       x *= firstAction
     } else if (x == secondCondition) {
@@ -43,9 +43,6 @@ const compute = (parameters) => {
         <div class="col-md-5 my-3">
           <Result :result="result" :computing="computing" />
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-auto my-3">占位</div>
       </div>
     </main>
   </main>

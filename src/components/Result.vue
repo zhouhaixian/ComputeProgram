@@ -15,12 +15,12 @@ const props = defineProps(['result', 'computing'])
       </div>
       <ul class="list-group placeholder-glow" v-else-if="props.result.length == 0">
         <li
-          class="list-group-item placeholder mb-1"
-          v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+          class="list-group-item placeholder"
+          v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
         ></li>
       </ul>
       <ul class="list-group" v-else-if="!props.computing">
-        <li class="list-group-item mb-1" v-for="item in props.result">{{ item }}</li>
+        <li class="list-group-item" v-for="item in props.result">{{ item }}</li>
       </ul>
     </div>
   </div>
