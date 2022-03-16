@@ -8,16 +8,202 @@ import Result from './components/Result.vue'
 const result = ref([])
 const compute = (parameters) => {
   result.value = []
-  let { x, count, firstCondition, firstAction, secondCondition, secondAction } = parameters
-  for (let i = 1; i <= count; i++) {
-    if (x != firstCondition) {
-      x *= firstAction
-    } else if (x == secondCondition) {
-      x += secondAction
-    }
-    result.value.push(`第${i}次: x = ${x}`)
-    console.log(`第${i}次: x = ${x}`)
+  let { x, count, firstCondition, firstAction, firstOperator, secondCondition, secondAction, secondOperator } = parameters
+  switch (firstOperator) {
+    case "addition":
+      switch (secondOperator) {
+        case "addition":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x += firstAction
+            } else if (x == secondCondition) {
+              x += secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "subtract":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x += firstAction
+            } else if (x == secondCondition) {
+              x -= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "multiplication":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x += firstAction
+            } else if (x == secondCondition) {
+              x *= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "division":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x += firstAction
+            } else if (x == secondCondition) {
+              x /= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+      }
+      break
+    case "subtract":
+      switch (secondOperator) {
+        case "addition":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x -= firstAction
+            } else if (x == secondCondition) {
+              x += secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "subtract":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x -= firstAction
+            } else if (x == secondCondition) {
+              x -= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "multiplication":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x -= firstAction
+            } else if (x == secondCondition) {
+              x *= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "division":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x -= firstAction
+            } else if (x == secondCondition) {
+              x /= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+      }
+      break
+    case "multiplication":
+      switch (secondOperator) {
+        case "addition":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x *= firstAction
+            } else if (x == secondCondition) {
+              x += secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "subtract":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x *= firstAction
+            } else if (x == secondCondition) {
+              x -= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "multiplication":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x *= firstAction
+            } else if (x == secondCondition) {
+              x *= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "division":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x *= firstAction
+            } else if (x == secondCondition) {
+              x /= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+      }
+      break
+    case "division":
+      switch (secondOperator) {
+        case "addition":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x /= firstAction
+            } else if (x == secondCondition) {
+              x += secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "subtract":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x /= firstAction
+            } else if (x == secondCondition) {
+              x -= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "multiplication":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x /= firstAction
+            } else if (x == secondCondition) {
+              x *= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+        case "division":
+          for (let i = 1; i <= count; i++) {
+            if (x != firstCondition) {
+              x /= firstAction
+            } else if (x == secondCondition) {
+              x /= secondAction
+            }
+            result.value.push(`第${i}次: x = ${x}`)
+            console.log(`第${i}次: x = ${x}`)
+          }
+          break
+      }
+      break
   }
+  result.value.reverse()
 }
 
 </script>
@@ -25,7 +211,7 @@ const compute = (parameters) => {
 <template>
   <main class="container py-5">
     <header class="container">
-      <h1 class="display-6">计算程序</h1>
+      <h1 class="display-6">Compute Program</h1>
       <small class="text-muted">
         一个计算程序，使用
         <mark>For</mark> 语句和
@@ -42,5 +228,11 @@ const compute = (parameters) => {
         </div>
       </div>
     </main>
+    <footer class="py-3">
+      <p class="text-center text-muted mb-0">MIT Licensed | Made by Zhou Haixian</p>
+      <p class="text-center text-muted">
+        <a href="https://github.com/zhouhaixian/ComputeProgram" target="_blank">Github</a>
+      </p>
+    </footer>
   </main>
 </template>

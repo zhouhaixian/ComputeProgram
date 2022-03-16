@@ -1,7 +1,7 @@
 {
   "name": "compute-program",
   "private": true,
-  "version": "2.1.1",
+  "version": "3.2.6",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
