@@ -6,9 +6,7 @@ import Parameters from './components/Parameters.vue'
 import Result from './components/Result.vue'
 
 const result = ref([])
-const computing = ref(false)
 const compute = (parameters) => {
-  computing.value = !computing.value
   result.value = []
   let { x, count, firstCondition, firstAction, secondCondition, secondAction } = parameters
   for (let i = 1; i <= count; i++) {
@@ -20,7 +18,6 @@ const compute = (parameters) => {
     result.value.push(`第${i}次: x = ${x}`)
     console.log(`第${i}次: x = ${x}`)
   }
-  computing.value = !computing.value
 }
 
 </script>
@@ -41,7 +38,7 @@ const compute = (parameters) => {
           <Parameters @compute="compute" />
         </div>
         <div class="col-md-5 my-3">
-          <Result :result="result" :computing="computing" />
+          <Result :result="result" />
         </div>
       </div>
     </main>

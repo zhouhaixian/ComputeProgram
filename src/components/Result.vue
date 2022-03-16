@@ -1,6 +1,6 @@
 <script setup>
 
-const props = defineProps(['result', 'computing'])
+const props = defineProps(['result'])
 
 </script>
 
@@ -8,19 +8,8 @@ const props = defineProps(['result', 'computing'])
   <div class="card">
     <h6 class="card-header">📋 结果</h6>
     <div class="card-body">
-      <div class="container row m-0 align-items-center justify-content-center" style="height: 12.5rem;" v-if="props.computing">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-      <ul class="list-group placeholder-glow" v-else-if="props.result.length == 0">
-        <li
-          class="list-group-item placeholder"
-          v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
-        ></li>
-      </ul>
-      <ul class="list-group" v-else-if="!props.computing">
-        <li class="list-group-item" v-for="item in props.result">{{ item }}</li>
+      <ul class="list-group">
+        <li class="list-group-item" v-for="(item, index) in props.result" :key="index">{{ item }}</li>
       </ul>
     </div>
   </div>
