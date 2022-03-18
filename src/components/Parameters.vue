@@ -30,7 +30,7 @@ const compute = (event) => {
   event.preventDefault()
 }
 onMounted(() => {
-  compute({ preventDefault: () => { return null } })
+  compute({ preventDefault: () => null })
 })
 </script>
 
