@@ -44,7 +44,7 @@ onMounted(() => {
           <span class="input-group-text">输入 ( x )</span>
           <input class="form-control" type="number" max="999999" step="0.1" v-model="parameters.x" />
           <span class="input-group-text">循环次数</span>
-          <input class="form-control" type="number" max="100000" min="1" v-model="parameters.count" />
+          <input class="form-control" type="number" max="400000" min="1" v-model="parameters.count" />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">如果 x ≠</span>
