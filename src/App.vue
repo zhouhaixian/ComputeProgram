@@ -21,7 +21,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
@@ -32,7 +31,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
@@ -43,7 +41,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
@@ -54,7 +51,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -69,7 +65,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
@@ -80,7 +75,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
@@ -91,7 +85,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
@@ -102,7 +95,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -117,7 +109,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
@@ -128,7 +119,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
@@ -139,7 +129,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
@@ -150,7 +139,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -165,7 +153,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "subtract":
@@ -176,7 +163,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "multiplication":
@@ -187,7 +173,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
         case "division":
@@ -198,7 +183,6 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
             result.push(`第${i}次: x = ${math.format(x)}`)
-            console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
@@ -211,8 +195,10 @@ const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parame
 const result = ref([])
 const running = computed(() => computeStatus.value === "RUNNING")
 const handleCompute = async parameters => {
+  console.time('计算用时')
   result.value = []
   result.value = await compute(JSON.stringify(parameters))
+  console.timeEnd('计算用时')
 }
 
 </script>
