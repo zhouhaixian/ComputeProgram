@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, unref } from 'vue'
 
+const props = defineProps(['running'])
 const emit = defineEmits(['compute'])
 
 const parameters = ref({
@@ -43,7 +44,7 @@ onMounted(() => {
           <span class="input-group-text">输入 ( x )</span>
           <input class="form-control" type="number" max="999999" step="0.1" v-model="parameters.x" />
           <span class="input-group-text">循环次数</span>
-          <input class="form-control" type="number" max="10000" min="1" v-model="parameters.count" />
+          <input class="form-control" type="number" max="100000" min="1" v-model="parameters.count" />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">如果 x ≠</span>
@@ -95,7 +96,12 @@ onMounted(() => {
         </div>
         <div class="container">
           <div class="row">
-            <input class="btn btn-primary col me-3" type="submit" value="计算" />
+            <input class="btn btn-primary col me-3" type="submit" value="计算" v-if="!running" />
+            <button class="btn btn-primary col me-3" type="submit" value="计算" disabled v-else>
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
             <button class="btn btn-secondary col" type="button" @click="reset">重置</button>
           </div>
         </div>

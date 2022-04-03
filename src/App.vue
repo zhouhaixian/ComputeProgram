@@ -1,15 +1,15 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { ref } from 'vue'
-import * as math from 'mathjs'
+import { ref, computed } from 'vue'
 import Parameters from './components/Parameters.vue'
 import Result from './components/Result.vue'
+import { useWebWorkerFn } from '@vueuse/core'
 
-const result = ref([])
-const compute = (parameters) => {
-  result.value = []
-  let { x, count, firstCondition, firstAction, firstOperator, secondCondition, secondAction, secondOperator } = parameters
+
+const { workerFn: compute, workerStatus: computeStatus } = useWebWorkerFn(parameters => {
+  let result = []
+  let { x, count, firstCondition, firstAction, firstOperator, secondCondition, secondAction, secondOperator } = JSON.parse(parameters)
   switch (firstOperator) {
     case "addition":
       switch (secondOperator) {
@@ -20,7 +20,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -31,7 +31,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -42,7 +42,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -53,7 +53,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -68,7 +68,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -79,7 +79,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -90,7 +90,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -101,7 +101,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -116,7 +116,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -127,7 +127,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -138,7 +138,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -149,7 +149,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -164,7 +164,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.add(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -175,7 +175,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.subtract(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -186,7 +186,7 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.multiply(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
@@ -197,14 +197,22 @@ const compute = (parameters) => {
             } else if (x == secondCondition) {
               x = math.divide(math.bignumber(x), math.bignumber(secondAction))
             }
-            result.value.push(`第${i}次: x = ${math.format(x)}`)
+            result.push(`第${i}次: x = ${math.format(x)}`)
             console.log(`第${i}次: x = ${math.format(x)}`)
           }
           break
       }
       break
   }
-  result.value.reverse()
+  result.reverse()
+  return result
+}, { dependencies: [ 'https://cdn.jsdelivr.net/npm/mathjs@10.4.2/lib/browser/math.min.js' ] })
+
+const result = ref([])
+const running = computed(() => computeStatus.value === "RUNNING")
+const handleCompute = async parameters => {
+  result.value = []
+  result.value = await compute(JSON.stringify(parameters))
 }
 
 </script>
@@ -222,10 +230,10 @@ const compute = (parameters) => {
     <main class="my-5 container">
       <div class="row">
         <div class="col-md-7 my-3">
-          <Parameters @compute="compute" />
+          <Parameters :running="running" @compute="handleCompute" />
         </div>
         <div class="col-md-5 my-3">
-          <Result :result="result" />
+          <Result :running="running" :result="result" />
         </div>
       </div>
     </main>
